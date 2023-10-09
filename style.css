@@ -24,6 +24,7 @@ a,i{
     transition: .5s;
     text-decoration: none;
     color: inherit;
+    font-weight: bold;
 }
 
 body{
@@ -90,6 +91,7 @@ body{
         margin: 1rem;
         color: var(--cor4);
         background-color: white;
-        border: none
+        border: none;
+        font-weight: bold;
     }
 }
