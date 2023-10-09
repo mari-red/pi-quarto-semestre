@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Loved by the King', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Cores*/
+:root {
+    --cor1: #007d06;
+    --cor2: #00ab09;
+    --cor3: #1c9322;
+    --cor4: #3bc942;
+    --cor5: #004a04;
+    } 
+
+*:focus {
+    outline: 0;
+}
+
+a,i{
+    transition: .5s;
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    background: linear-gradient(to bottom, var(--cor1), var(--cor4));
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container{
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+}
+
+.img-principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    >div{
+        height: 9rem;
+        width: 20rem;
+        margin: 1rem;
+        border-radius: 1rem;
+        border: 2px solid white
+    }
+}
+
+#div1{
+    background-image: url("https://images.pexels.com/photos/867453/pexels-photo-867453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+}
+
+#div2{
+    background-image: url("https://images.pexels.com/photos/841125/pexels-photo-841125.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-size: cover;
+}
+
+
+.texto-principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+
+    >h1{
+        font-size: 3rem;
+    }
+
+    >span{
+        font-size: .9rem;
+        margin-bottom: .5rem;
+    }
+
+    >button{
+        padding: 1rem 6rem;
+        border-radius: 1rem;
+        margin: 1rem;
+        color: var(--cor4);
+        background-color: white;
+        border: none
+    }
+}

@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Loved by the King', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Cores*/
+:root {
+    --cor1: #007d06;
+    --cor2: #00ab09;
+    --cor3: #1c9322;
+    --cor4: #3bc942;
+    --cor5: #004a04;
+    } 
+
+*:focus {
+    outline: 0;
+}
+
+a,i{
+    transition: .5s;
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    background: linear-gradient(to bottom, var(--cor1), var(--cor4));
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container{
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+}
+
+.login{
+    flex-direction: column;
+}
