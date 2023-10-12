@@ -61,11 +61,6 @@ main{
         }
     }
 
-    >form{
-        display: flex;
-        flex-direction: column;
-        
-
         >input{
             padding: 1rem;
             margin: 0rem .5rem;
@@ -86,7 +81,6 @@ main{
             border-radius: 1rem;
             cursor: pointer;
         }
-    }
 
     >a{
         color: var(--black);

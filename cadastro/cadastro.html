@@ -21,16 +21,22 @@
                 <h1>Sing up</h1>
                 <p>Olá! Vamos criar sua conta</p>
                 <input type="text" placeholder="Nome">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
+                <input type="email" name="userEmail" id="userEmail" placeholder="Email" required>
+                <input type="password" name="userPassword" id="userPassword" placeholder="Senha" required>
                 <div class="termos">
                     <input type="checkbox"  placeholder="Senha">
                     <span>Concordo com os <strong>Termos de Serviço</strong> e a <strong>Politica de Privacidade</strong> da Plataforma</span>
                 </div>
-                <button>Cadastrar</button>
+                <button type="button" onclick="register()">Cadastrar</button>
                 <p>Já possui cadastro? <a href="/login/login.html">Faça login</a></p>
             </div>
         </section>
     </main>
+
+    <!--JS-->
+    <script src="../index.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="../firebaseConnection.js"></script>
 </body>
 </html>
