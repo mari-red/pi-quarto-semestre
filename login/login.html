@@ -6,19 +6,35 @@
     <title>Login</title>
 
     <!--Styles-->
-    <link rel="stylesheet" href="loginStyle.css">
+    <link rel="stylesheet" href="../assets/style/styles.css">
+
+    <!--JS-->
+    <script src="login.js"></script>
 
 </head>
 <body>
-    <div class="container">
-        <div class="login">
-            <h1>Login</h1>
-            <span>Bem vindo de volta! Por favor, insira seus dados.</span>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Senha">
-            <button>Logar</button>
-            <span>Primeira vez aqui? <a href="/cadastro/cadastro.html">Cadastre-se gratuitamente</a></span>
-        </div>
-    </div>
+    <main>
+        <section class="container-logo">
+            <img src="../assets/image/iconLogin.svg" alt="">
+            <h1>SportFit</h1>
+        </section>
+
+        <section class="container-login">
+            <div class="login">
+                <h1>Login</h1>
+                <p>Bem vindo de volta! Por favor, insira seus dados.</p>
+                <form action="submit" id="login-form">
+                    <input type="email" name="useEmail" id="useEmail" placeholder="Email" required>
+                    <input type="password" name="usePassword" id="usePassword" placeholder="Senha" required>
+                    <div class="termos">
+                        <input type="checkbox"  placeholder="Senha">
+                        <span>Lembrar informações</span>
+                    </div>
+                    <button type="button" onclick="enviarFormulario()">Logar</button>
+                </form>
+                <p>Primeira vez aqui? <a href="/cadastro/cadastro.html">Cadastre-se gratuitamente</a></p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

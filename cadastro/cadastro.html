@@ -6,24 +6,31 @@
     <title>Sing up</title>
 
     <!--Styles-->
-    <link rel="stylesheet" href="cadastroStyles.css">
+    <link rel="stylesheet" href="../assets/style/styles.css">
 
 </head>
 <body>
-    <div class="container">
-        <div class="login">
-            <h1>Sing up</h1>
-            <span>Olá! Vamos criar sua conta</span>
-            <input type="text" placeholder="Nome">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Senha">
-            <div class="termos">
-                <input type="checkbox"  placeholder="Senha">
-                <span>Concordo com os Termos de Serviço e a Politica de Privacidade da Plataforma</span>
+    <main>
+        <section class="container-logo">
+            <img src="../assets/image/iconLogin.svg" alt="">
+            <h1>SportFit</h1>
+        </section>
+
+        <section class="container-cadastro">
+            <div class="cadastro">
+                <h1>Sing up</h1>
+                <p>Olá! Vamos criar sua conta</p>
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                <div class="termos">
+                    <input type="checkbox"  placeholder="Senha">
+                    <span>Concordo com os <strong>Termos de Serviço</strong> e a <strong>Politica de Privacidade</strong> da Plataforma</span>
+                </div>
+                <button>Cadastrar</button>
+                <p>Já possui cadastro? <a href="/login/login.html">Faça login</a></p>
             </div>
-            <button>Cadastrar</button>
-            <span>Já possui cadastro? <a href="/login/login.html">Faça login</a></span>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>

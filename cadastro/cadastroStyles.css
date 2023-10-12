@@ -2,62 +2,63 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    font-family: 'Loved by the King', cursive;
-    font-family: 'Poppins', sans-serif;
 }
 
-/*Cores*/
-:root {
-    --cor1: #007d06;
-    --cor2: #00ab09;
-    --cor3: #1c9322;
-    --cor4: #3bc942;
-    --cor5: #004a04;
-    } 
-
-*:focus {
-    outline: 0;
-}
-
-a,i{
-    transition: .5s;
-    text-decoration: none;
-    color: var(--cor4);
-    font-weight: bold;
-}
-
-body{
-    background: linear-gradient(to bottom, var(--cor1), var(--cor4));
+main{
+    background: linear-gradient(to bottom, var(--greenMain), var(--greenSecondary));
     background-size: cover;
     background-attachment: fixed;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.container{
-    max-width: 380px;
-    width: 100%;
-    text-align: center;
-    flex-direction: column;
-    background-color: white;
+    justify-content: space-around;
     height: 100vh;
 }
 
-.login{
+.container-logo{
+    display: flex;
+
+    >h1{
+        color: var(--white);
+        font-weight: 300;
+        font-size: 7rem;
+        margin-left: 1rem;
+    }
+
+    @media screen and (max-width: 1200px){
+        display: none;
+    }
+}
+
+.container-cadastro{
+    width: 552px;
+    text-align: center;
+    flex-direction: column;
+    background-color: white;
+    height: 600px;
+    padding: 3rem;
+
+    @media screen and (max-width: 600px){
+        width: 380px;
+    }
+}
+
+.cadastro{
     display: flex;
     flex-direction: column;
-    margin: 4rem 0rem;
 
     >h1{
         margin-bottom: 1rem;
+        color: var(--black);
     }
 
-    >span{
+    >p{
         color: grey;
         font-size: .9rem;
         margin-bottom: 1rem;
+
+        >a{
+            color: var(--greenSecondary);
+        }
     }
 
     >input{
@@ -65,7 +66,7 @@ body{
         margin: 0rem .5rem;
         margin-bottom: 1rem;
         border-radius: 1rem;
-        border: 1px solid var(--cor4);
+        border: 1px solid var(--greenSecondary)
     }
 
     >button{
@@ -73,16 +74,29 @@ body{
         margin: 0rem .5rem;
         margin-bottom: 1rem;
         color: white;
-        background-color: var(--cor4);
+        background-color: var(--greenSecondary);
         border: none;
         font-weight: bold;
         font-size: 1rem;
         border-radius: 1rem;
     }
+    
+    >a{
+        color: var(--black);
+        font-size: 5rem;
+    }
 }
+
+
 
 .termos{
     color: grey;
-    font-size: .9rem;
+    font-size: .8rem;
+    font-weight: 200;
     margin-bottom: 1rem;
+    display: flex;
+    margin-left: 1rem;
+    >span{
+        margin-left: .5rem;
+    }
 }
