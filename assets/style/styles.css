@@ -1,0 +1,47 @@
+@import 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap';
+@import url(./home.css);
+
+
+/*Cores e Fonte*/
+:root {
+    --black: #000000; 
+    --white: #FFFFFF;
+    --backgroundBody: #FAFAFA;
+    --borderButton: #F4F8FB;
+
+    --greenMain: #007d06;
+    --greenSecondary: #26CC2F;
+    --fontColor: #3bc942;
+
+    --cor2: #00ab09;
+    --cor3: #1c9322;
+    --cor5: #004a04;
+
+    --grey800: #39434F;
+    --grey600: #808B9A;
+    --grey200: #D9DFE6;
+
+    --primaryFont: 'Plus Jakarta';
+} 
+
+*:focus {
+    outline: 0;
+}
+
+a,i{
+    transition: .5s;
+    text-decoration: none;
+}
+
+body{
+    font-family: var(--primaryFont);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--grey800);
+}
+
+.container{
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+}
