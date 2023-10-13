@@ -1,0 +1,42 @@
+.jornada{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jornada__banner{
+    margin: 5rem 0;
+}
+
+.jornada__content{
+    text-align: center;
+
+    >h2{
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.2rem; 
+    }
+
+    >p{
+        color: var(--grey600);
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 1.25rem;
+    }
+
+    >button{
+        background-color: var(--greenSecondary);
+        border: 1px solid var(--borderButton);
+        border-radius: 1rem;
+        box-shadow: 0px 1px 4px 0px rgba(139, 158, 184, 0.20);
+        padding: 1rem 6rem;
+        margin: 1rem;
+    }
+}
+
+.link{
+    font-family: var(--primaryFont);
+    font-weight: 600;
+    color: var(--white);
+}
