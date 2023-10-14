@@ -10,6 +10,7 @@
 :root {
     --black: #000000; 
     --white: #FFFFFF;
+    --yellow:#F5BA41;
     --backgroundBody: #FAFAFA;
     --borderButton: #F4F8FB;
 
@@ -23,6 +24,7 @@
 
     --grey800: #39434F;
     --grey600: #808B9A;
+    --grey400: #B3BECD;
     --grey200: #D9DFE6;
 
     --primaryFont: 'Poppins', sans-serif;
