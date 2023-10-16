@@ -112,4 +112,17 @@ span{
 }
 
 
+@media screen and (min-width:1200px) {
+  .header{
+    justify-content: space-between;
+    background-position: left bottom;
+    margin: 1rem;
+
+    >a{
+        font-size: 1.2rem;
+    }
+  }
+}
+
+
 
