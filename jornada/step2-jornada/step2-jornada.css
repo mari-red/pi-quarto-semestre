@@ -111,6 +111,33 @@ span{
     background-color: var(--yellow);
 }
 
+.sliderValue{
+    width: 3.5rem;
+    padding: .5rem 0;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    background: var(--grey700);
+    text-align: center;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.sliderValue::placeholder{
+    font-family: var(--primaryFont);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.field{
+    >input{
+        width: 70vw;
+        height: 3px;
+        outline: none;
+        border: none;
+    }
+}
+
 
 @media screen and (min-width:1200px) {
   .header{
@@ -126,3 +153,7 @@ span{
 
 
 
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
