@@ -111,6 +111,13 @@ span{
     background-color: var(--yellow);
 }
 
+.slider{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
 .sliderValue{
     width: 3.5rem;
     padding: .5rem 0;
@@ -149,11 +156,4 @@ span{
         font-size: 1.2rem;
     }
   }
-}
-
-
-
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
 }
