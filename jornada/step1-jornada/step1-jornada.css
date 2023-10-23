@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }
 
 .jornada__banner{
@@ -10,7 +11,12 @@
 }
 
 .jornada__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 100%;
 
     >h2{
         font-size: 1.6rem;
@@ -18,11 +24,13 @@
         line-height: 2.2rem; 
     }
 
+    >a,
     >p{
         color: var(--grey600);
         font-size: 0.8rem;
         font-weight: 500;
         line-height: 1.25rem;
+        text-decoration: none;
     }
 
     >button{
@@ -39,4 +47,30 @@
     font-family: var(--primaryFont);
     font-weight: 600;
     color: var(--white);
+}
+
+@media screen and (min-width: 1800px) {
+    .jornada__banner{
+        width: 40vw;
+    }
+
+   .jornada__content{
+        width: 100vw;
+   }
+
+   .jornada__content{
+        gap: 3rem;
+        >h2{
+            font-size: 3rem;
+        }
+
+        >a,
+        >p{
+            font-size: 1.5rem;
+        }
+    }
+
+    .link{
+        font-size: 1.5rem;
+    }
 }
