@@ -1,10 +1,4 @@
 
-// var counter = 0
-// var tempo = document.getElementById("tempo")
-// tempo.addEventListener("click",()=>{
-//      counter++
-// });
-
 const milissegundos = document.querySelector('.milissegundos')
 const segundos = document.querySelector('.segundos')
 const minutos = document.querySelector('.minutos')
