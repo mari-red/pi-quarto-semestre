@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-main{
+#cadastro-main{
     background: linear-gradient(to bottom, var(--greenMain), var(--greenSecondary));
     background-size: cover;
     background-attachment: fixed;

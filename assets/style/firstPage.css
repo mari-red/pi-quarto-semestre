@@ -1,3 +1,9 @@
+#body-first{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, var(--greenMain) 0%, var(--greenSecondary) 100%);
+}
+
 .home{
     background: linear-gradient(180deg, var(--greenMain) 0%, var(--greenSecondary) 100%);
     background-size: cover;
