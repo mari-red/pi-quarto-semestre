@@ -33,3 +33,27 @@
     gap: 1.5rem;
     flex: 1 0 0;
 }
+
+.mainDashboard__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20.5rem;
+    height: 8rem;
+    padding: 1rem 1.25rem;
+    
+    border-radius: .8rem;
+    border: 1px solid var(--grey100);
+    background: var(--greenSecondary);
+}
+
+.mainDashboard__container--title {
+    transition: .5s;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: .8rem;
+    border: 1px solid var(--white);
+}
