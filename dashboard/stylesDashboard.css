@@ -57,3 +57,132 @@
     padding: .8rem;
     border: 1px solid var(--white);
 }
+
+.mainProfile{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-self: stretch; 
+
+    padding: 1.25rem;
+
+    border-radius: 1.25rem;
+    background: var(--white);
+    box-shadow: 0px 4px 20px -2px rgba(50, 50, 71, 0.02), 0px 0px 8px 0px rgba(12, 26, 75, 0.10);
+}
+
+.mainProfileCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.weight,
+.step,
+.heart{
+    color: var(--grey600);
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1rem;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 1.2rem;
+}
+
+.weight{
+    background-image: url(../assets/image/weight.png);
+}
+.step{
+    background-image: url(../assets/image/step.png);
+}
+.heart{
+    background-image: url(../assets/image/heartbeat.png);
+}
+
+.value{
+    color: var(--grey700);
+    font-weight: 700;
+    line-height: 1.8rem;
+
+    >span{
+        color: var(--grey400);
+        font-size: 0.6rem;
+        font-weight: 500;
+        line-height: 1rem;
+    }
+}
+
+.mainHabits{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 1rem;
+
+    >h2{
+        font-weight: 700;
+        line-height: 1.6em;
+    }
+}
+
+.mainHabitsCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.mainHabitsCard,
+.mainHabitsReports{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+
+    border-radius: 0.875rem;
+    border: 1px solid var(--grey100);
+    background: var(--White);
+    box-shadow: 0px 3px 15px -1.5px rgba(50, 50, 71, 0.02), 0px 0px 3.75px 0px rgba(12, 26, 75, 0.05);
+
+    >h2{
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+    }
+
+    >p{
+        color: var(--grey600);
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 1rem;
+    }
+}
+
+.mainHabitsCard{
+    padding: 1.125rem 0.8rem;
+    width: 12rem;
+}
+    
+.mainHabitsReports{
+    padding: 1rem;
+    gap: 1rem;
+    background-image: url(../assets/image/arrow.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-x: 90%;
+}
+
+
+@media screen and (min-width: 1400px) {
+    .mainmainDashboard{
+        background-color: aqua;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        max-width: 800px;
+    }
+}
