@@ -29,6 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
     padding: 0.75rem 1.5rem;
     gap: 1.5rem;
     flex: 1 0 0;
@@ -111,6 +112,7 @@
         font-size: 0.6rem;
         font-weight: 500;
         line-height: 1rem;
+        padding-left: .5rem;
     }
 }
 
@@ -178,11 +180,13 @@
 
 
 @media screen and (min-width: 1400px) {
-    .mainmainDashboard{
-        background-color: aqua;
-        align-items: center;
+    main{
+        display: flex;
         justify-content: center;
-        align-content: center;
-        max-width: 800px;
+    }
+
+    .mainDashboard{
+        max-width: 900px;
+        gap: 3rem;
     }
 }
