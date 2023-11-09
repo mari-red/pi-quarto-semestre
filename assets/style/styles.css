@@ -2,13 +2,16 @@
 @import url(./firstPage.css);
 @import url(../../login/loginStyle.css);
 @import url(../../cadastro/cadastroStyles.css);
-@import url(../../home/stylesHome.css);
-
+@import url(../../dashboard/stylesDashboard.css);
+@import url(../../jornada/step1-jornada/step1-jornada.css);
+@import url(../../jornada/step2-jornada/step2-jornada.css);
+@import url(../../jornada/step3-jornada/step3-jornada.css);
 
 /*Cores e Fonte*/
 :root {
     --black: #000000; 
     --white: #FFFFFF;
+    --yellow:#F5BA41;
     --backgroundBody: #FAFAFA;
     --borderButton: #F4F8FB;
 
@@ -21,9 +24,13 @@
     --cor5: #004a04;
 
     --grey800: #39434F;
+    --grey700: #606873;
     --grey600: #808B9A;
+    --grey400: #B3BECD;
     --grey200: #D9DFE6;
-
+    --grey150:#ECEFF2;
+    --grey100: #F7FAFC;
+    
     --primaryFont: 'Poppins', sans-serif;
 } 
 
