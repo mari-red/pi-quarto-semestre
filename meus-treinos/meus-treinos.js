@@ -1,7 +1,7 @@
 
-const milissegundos = document.querySelector('.milissegundos')
-const segundos = document.querySelector('.segundos')
-const minutos = document.querySelector('.minutos')
+const miliseg = document.querySelector('.milissegundos')
+const seg = document.querySelector('.segundos')
+const min = document.querySelector('.minutos')
 
 let miliNum = 0
 let segNum = 0
@@ -11,9 +11,9 @@ let INTERVALO = 0
 function milissegundos() {
     miliNum++
     if (miliNum < 10) {
-        milissegundos.innerHTML = '0' + miliNum
+        miliseg.innerHTML = '0' + miliNum
     } else {
-        milissegundos.innerHTML = miliNum
+        miliseg.innerHTML = miliNum
     }
 
     if (miliNum == 99) {
@@ -25,9 +25,9 @@ function milissegundos() {
 function segundos() {
     segNum++
     if (segNum < 10) {
-        segundos.innerHTML = '0' + segNum
+        seg.innerHTML = '0' + segNum
     }else {
-        segundos.innerHTML = segNum
+        seg.innerHTML = segNum
     }
 
     if (segNum == 59){
@@ -39,9 +39,9 @@ function segundos() {
 function minutos() {
     minNum++
     if (minNum < 10) {
-        minutos.innerHTML = '0' + minNum
+        min.innerHTML = '0' + minNum
     } else {
-        minutos.innerHTML = minNum
+        min.innerHTML = minNum
     }
 }
 
@@ -61,7 +61,7 @@ function resetar() {
     miliNum = 0
     segNum = 0
     minNum = 0
-    milissegundos.innerHTML = '00'
-    segundos.innerHTML = '00'
-    minutos.innerHTML = '00'
+    miliseg.innerHTML = '00'
+    seg.innerHTML = '00'
+    min.innerHTML = '00'
 }
