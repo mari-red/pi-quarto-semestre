@@ -15,6 +15,15 @@
         font-size: 5rem;
         font-weight: bolder;
         margin-bottom: 1rem;
+        @media screen and (max-width: 1440px) {
+            font-size: 3rem;
+        }
+    }
+
+    > p{
+        @media screen and (max-width: 1440px) {
+            font-size: .9rem;
+        }
     }
 
     > button {
