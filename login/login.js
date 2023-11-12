@@ -5,9 +5,7 @@ function login() {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function(userCredential) {
         var user = userCredential.user;
-        alert("Login bem-sucedido!");
-        console.log(user);
-        window.location.href = "../home/home.html";
+        window.location.href = "../dashboard/dashboard.html";
     })
     .catch(function(error) {
         alert("Erro no login: " + error.message);

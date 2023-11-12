@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sing up</title>
+    <title>Meus treinos</title>
 
     <!--Styles-->
     <link rel="stylesheet" href="../assets/style/styles.css">
@@ -11,42 +11,42 @@
 
 </head>
 <body>
-    <main>
-        <section class="container-cadastro">
-            <div class="cadastro">
-                <h1>Meus treinos</h1>
-                <p>Olá! É hora de treinar!</p>
-                <div class="botoesMenu">
-                    <button>Running</button>
-                    <button>Ciclismo</button>
-                    <button>Yoga</button>
-                    <button>Nataçao</button>
-                    <button>Surf</button>
-                </div>
-
-                <div class="principal">
-                    <p class="tempo">
-                        <span class="minutos">00</span>:<span class="segundos">00</span>:<span class="milissegundos">00</span>
-                    </p>
-                </div>
-
-                <div>
-                    <button class="iniciar" type="button" onclick="iniciar()">Iniciar</button>
-                    <button class="parar" type="button" onclick="finalizar()">Finalizar</button>
-                    <button class="resetar" type="button" onclick="resetar()">Resetar</button>
-                </div>
-
-<!--                <input id="tempo" type="number" placeholder="00:00">-->
-
-
+<main>
+    <section class="container-treino">
+        <div class="treino">
+            <h1>Meus treinos</h1>
+            <p>Olá! É hora de treinar!</p>
+            <p>Selecione uma modalidade abaixo</p>
+            <div class="botoesMenu">
+                <input type="radio" id="corrida" name="mod"> Corrida
+                <input type="radio" id="ciclismo" name="mod"> Ciclismo
+                <input type="radio" id="yoga" name="mod"> Yoga
+                <input type="radio" id="natacao" name="mod"> Natação
+                <input type="radio" id="surf" name="mod"> Surf
             </div>
-        </section>
-    </main>
 
-    <!--JS-->
-    <script src="meus-treinos.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
-    <script src="../firebaseConnection.js"></script>
+            <div class="contador">
+                <p>
+                    <span class="minutos">00</span>:<span class="segundos">00</span>:<span class="milissegundos">00</span>
+                </p>
+            </div>
+
+            <div class="contador">
+                <button class="iniciar" type="button" onclick="iniciar()">Iniciar</button>
+                <button class="parar" type="button" onclick="finalizar()">Finalizar</button>
+                <button class="resetar" type="button" onclick="resetar()">Resetar</button>
+            </div>
+
+
+
+        </div>
+    </section>
+</main>
+
+<!--JS-->
+<script src="meus-treinos.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="../firebaseConnection.js"></script>
 </body>
 </html>

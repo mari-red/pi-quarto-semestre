@@ -5,9 +5,7 @@ function register() {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function(userCredential) {
             var user = userCredential.user;
-            alert("Cadastro bem-sucedido!");
-            console.log(user);
-            window.location.href = "../home/home.html";
+            window.location.href = "../jornada/step1-jornada/step1-jornada.html";
         })
         .catch(function(error) {
             alert("Erro no cadastro: " + error.message);

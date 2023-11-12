@@ -13,62 +13,6 @@
     background-image: url(../image/bannerMobile.svg);
     background-repeat: no-repeat;
     background-position: top center;
-}
-
-.content{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    color: var(--white);
-    gap: .8rem;
-
-    >h1{
-        font-size: 3rem;
-        font-weight: 700;
-        line-height: 2.6rem; 
-        letter-spacing: .02rem;
-    }
-
-    >p{
-        font-size: .9rem;
-        margin-bottom: .5rem;
-        line-height: 1.25rem;
-    }
-
-    >button{
-        background-color: var(--white);
-        border: 1px solid var(--borderButton);
-        border-radius: 1rem;
-        box-shadow: 0px 1px 4px 0px rgba(139, 158, 184, 0.20);
-        padding: 1rem 6rem;
-        margin: 1rem;
-    }
-}
-
-.sign,
-.login{
-    font-family: var(--primaryFont);
-    font-weight: 600;
-}
-
-.sign{
-    color: var(--fontColor);
-}
-
-.login{
-    color: var(--white);
-}
-
-.home{
-    background: linear-gradient(180deg, var(--greenMain) 0%, var(--greenSecondary) 100%);
-    background-size: cover;
-}
-
-.banner{
-    background-image: url(../image/bannerMobile.svg);
-    background-repeat: no-repeat;
-    background-position: top center;
     height: 100vh;
 
     display: flex;

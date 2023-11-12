@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../assets/style/reset.css">
+        <link rel="stylesheet" href="../../assets/style/styles.css">
+
+        <title>Jornada do usuário</title>
+    </head>
+    <body>
+        <header class="header">
+            <a class="voltar" href="../step1-jornada/step1-jornada.html">Voltar</a>
+            <a href="../step3-jornada/step3-jornada.html">Pular pergunta</a>
+        </header>
+        
+        <div class="container">
+            <h2>Deixe-nos conhecê-lo melhor!</h2>
+            
+            <h4>Gênero: <span>Masculino</span></h4>
+            <div class="container__genero">
+                <div class="content">
+                    <input class="content__input" name="opcao" type="radio" id="masculino"> 
+                    <label for="masculino" class="content__label genero">
+                        <img src="../../assets/image/user.svg">
+                        <span>Masculino</span>
+                    </label>
+                </div>
+
+                <div class="content">
+                    <input class="content__input" name="opcao" type="radio" id="feminino"> 
+                    <label for="feminino" class="content__label genero">
+                        <img src="../../assets/image/woman.svg">
+                        <span>Feminino</span>
+                    </label>
+                </div>
+
+                <div class="content">
+                    <input class="content__input" name="opcao" type="radio" id="binario"> 
+                    <label for="binario" class="content__label genero">
+                        <img src="../../assets/image/user.svg">
+                        <span>Não Binário</span>
+                    </label>
+                </div>
+
+                <div class="content">
+                    <input class="content__input" name="opcao" type="radio" id="outro"> 
+                    <label for="outro" class="content__label genero">
+                        <img src="../../assets/image/user.svg">
+                        <span>Outro</span>
+                    </label>
+                </div>
+            </div>
+
+            <h4>Idade: <span>26</span></h4>
+            <div class="slider">
+                <input class="sliderValue" type="number" id="ageInput" placeholder="26" min="1" max="110">                
+                <div class="field">
+                    <img src="../../assets/image/user.svg">
+                    <input id="ageRange" type="range" min="1" max="110" value="26">
+                    <img src="../../assets/image/old.svg">
+                </div>
+            </div>
+   
+            <h4>Altura: <span>175cm</span></h4>
+            <div class="slider">
+                <input class="sliderValue" type="number" id="heightInput" placeholder="175" min="140" max="230">                
+                <div class="field">
+                    <img src="../../assets/image/little man.svg">
+                    <input id="heightRange" type="range"  min="140" max="230" value="175">
+                    <img src="../../assets/image/user.svg">
+                </div>
+            </div>
+
+            <h4>Peso: <span>82kg</span></h4>
+            <div class="slider">
+                <input class="sliderValue" type="number" id="weightInput" placeholder="82" min="30" max="280">                
+                <div class="field">
+                    <img src="../../assets/image/little man.svg">
+                    <input id="weightRange" type="range"  min="30" max="280" value="82">
+                    <img src="../../assets/image/user.svg">
+                </div>
+            </div>
+
+            <button><a class="link" href="../step3-jornada/step3-jornada.html">Continue</a></button>
+        </div>
+
+        <script src="./step2-jornada.js"></script>
+    </body>
+</html>

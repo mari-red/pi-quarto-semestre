@@ -1,0 +1,94 @@
+.header{
+    background-image: url(../../assets/image/progress.svg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+
+    padding: 1rem;
+
+    >a{
+        color: var(--grey600);
+        text-align: center;
+        font-size: .8rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+    }
+}
+
+.voltar{
+    background-image: url(../../assets/image/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 1.2rem;
+    padding-left: 1.5rem;
+}
+
+
+.container__frequencia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1rem;
+
+    >h2{
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.125rem;
+    }
+
+    >button{
+        background-color: var(--greenSecondary);
+        border: 1px solid var(--borderButton);
+        border-radius: 1rem;
+        box-shadow: 0px 1px 4px 0px rgba(139, 158, 184, 0.20);
+        padding: 1rem 6rem;
+        margin: 1rem;
+    }
+}
+
+.link{
+    font-family: var(--primaryFont);
+    font-weight: 600;
+    color: var(--white);
+}
+
+.content__frequencia{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-self: stretch; 
+    flex-shrink: 0;
+    gap: 1rem;
+}
+
+.content__frequencia--input{
+    display: none;
+}
+
+.content__frequencia--input:checked ~ .content__frequencia--label{
+    background-color: var(--greenSecondary);
+}
+
+.content__frequencia--input:checked ~ .content__frequencia--label span{
+    color: var(--white);
+}
+
+.frequencia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 0;
+    padding: 1rem 3rem;
+    
+    border-radius: 1rem;
+    background: var(--white);
+    box-shadow: 0px 4px 20px -2px rgba(50, 50, 71, 0.02), 0px 0px 5px 0px rgba(12, 26, 75, 0.04);
+}
+
+.frequencia span{
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: var(--grey600);
+}
