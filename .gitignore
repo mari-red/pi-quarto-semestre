@@ -1,1 +1,3 @@
 .firebaseConnection.js
+# Local Netlify folder
+.netlify
