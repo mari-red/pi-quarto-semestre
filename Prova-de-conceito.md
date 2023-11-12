@@ -1,4 +1,4 @@
-# PROVA DE CONCEITO
+## PROVA DE CONCEITO
 
 Inicialmente, o projeto trata de um serviço cujo objetivo principal é 
 facilitar o acesso a treinamentos personalizados, informações sobre saúde e 
@@ -11,29 +11,27 @@ de um treino realizado.
 
 Para isso, devem ser desenvolvidas as segintes telas:
 - Início (página inicial)
+![inicial.png](docs%2Fimagens%2Finicial.png)
 
-![Captura de Tela 2023-11-12 às 12.19.01.png](..%2F..%2F..%2FDesktop%2FCaptura%20de%20Tela%202023-11-12%20%C3%A0s%2012.19.01.png)
 
 - Cadastro (usuários que entram pela primeira vez no serviço)
+![Cadastro.png](docs%2Fimagens%2FCadastro.png)
 
-![Captura de Tela 2023-11-12 às 12.11.54.png](..%2F..%2F..%2FDesktop%2FCaptura%20de%20Tela%202023-11-12%20%C3%A0s%2012.11.54.png)
 
 - Login (usuários já cadastrados)
+![Login.png](docs%2Fimagens%2FLogin.png)
 
-![Captura de Tela 2023-11-12 às 12.11.07.png](..%2F..%2F..%2FDesktop%2FCaptura%20de%20Tela%202023-11-12%20%C3%A0s%2012.11.07.png)
 
 - Telas para registrar a jornada do usuário; 
+![jornada mobile.png](docs%2Fimagens%2Fjornada%20mobile.png)
+![jornada desktop.png](docs%2Fimagens%2Fjornada%20desktop.png)
 
-![Captura de Tela 2023-11-12 às 12.20.01.png](..%2F..%2F..%2FDesktop%2FCaptura%20de%20Tela%202023-11-12%20%C3%A0s%2012.20.01.png)
-
-![Captura de Tela 2023-11-12 às 12.20.30.png](..%2F..%2F..%2FDesktop%2FCaptura%20de%20Tela%202023-11-12%20%C3%A0s%2012.20.30.png)
 
 - Telas para acessar e registrar o tempo do treino realizado
+![iniciar treino.png](docs%2Fimagens%2Finiciar%20treino.png)
+![meus treinos.png](docs%2Fimagens%2Fmeus%20treinos.png)
 
-![Captura de Tela 2023-11-12 às 12.12.59.png](..%2F..%2F..%2FDesktop%2FCaptura%20de%20Tela%202023-11-12%20%C3%A0s%2012.12.59.png)
-
-![Captura de Tela 2023-11-12 às 12.14.33.png](..%2F..%2F..%2FDesktop%2FCaptura%20de%20Tela%202023-11-12%20%C3%A0s%2012.14.33.png)
-
+## REVISITANDO O PROJETO
 
 Ao revisitar o projeto original, identificamos necessidade de algumas 
 alterações nas telas relacionadas à prova de conceito, de forma que 
@@ -66,11 +64,11 @@ finalizar. Além disso, para iniciar uma nova contagem de tempo,
 poderá resetar o cronômetro.
 
 
-Link do protótipo no Figma:
+### Link do protótipo no Figma:
 `https://www.figma.com/file/oM62i81gcvRUpgisfNRUFC/PI?type=design&node-id=0-1&mode=design&t=Jlg14pB0RtQ5G1lP-0`
 
 
-Grupo 16:
+### Grupo 16:
 - João Lucas Mota Marques Dias
 - Marina Lobato Ramos Vermelho
 - Thalía Carneiro de Araújo 
