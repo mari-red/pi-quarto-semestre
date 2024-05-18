@@ -20,23 +20,76 @@
             <div class="cadastro">
                 <h1>Sing up</h1>
                 <p>Olá! Vamos criar sua conta</p>
-                <input type="text" placeholder="Nome">
+                <input type="text" id="userNome" placeholder="Nome">
                 <input type="email" name="userEmail" id="userEmail" placeholder="Email" required>
                 <input type="password" name="userPassword" id="userPassword" placeholder="Senha" required>
                 <div class="termos">
                     <input type="checkbox"  placeholder="Senha">
                     <span>Concordo com os <strong>Termos de Serviço</strong> e a <strong>Politica de Privacidade</strong> da Plataforma</span>
                 </div>
-                <button type="button" onclick="register()">Cadastrar</button>
+                <button type="button" id="cadastra">Cadastrar</button>
                 <p>Já possui cadastro? <a href="/login/login.html">Faça login</a></p>
             </div>
         </section>
     </main>
 
     <!--JS-->
-    <script src="register.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
-    <script src="../firebaseConnection.js"></script>
+    <script src="../index.js"></script>
+<!--    <script src="register.js"></script>-->
+<!--    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>-->
+<!--    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>-->
+<!--    <script src="../firebaseConnection.js"></script>-->
+
+    <script type="module">
+        import { supabase, user } from '../supabase-utils.js'
+
+        document.getElementById('cadastra').addEventListener('click', function (){
+            let nome = document.getElementById('userNome').value;
+            let email = document.getElementById('userEmail').value;
+            let password = document.getElementById('userPassword').value;
+            signUpWithEmail(nome, email, password)
+
+        });
+
+    // Function to sign up a new user with email and password
+        export async function signUpWithEmail(nome, email, password) {
+            const {user, data, error} = await supabase.auth.signUp({
+                nome,
+                email,
+                password,
+            });
+
+            console.log("user abaixo")
+            console.log(user)
+            console.log("data abaixo")
+            console.log(data)
+
+
+
+            console.log("cadastro- nome: " + nome + " e-mail: " + email + " senha: " + password)
+            console.log('User signed up:', data.user.id);
+
+            if (error) {
+                console.error('Error signing up:', error.message);
+            } else {
+                console.log('User signed up:', user);
+            }
+
+
+            supabase
+                .from('usuario')
+                .insert([{usuario_id: data.user.id, nome: nome, email: email, senha: password}])
+                .then(response => {
+                    console.log('Usuário inserido com sucesso na tabela "usuario":', response);
+                    window.location.href = '../login/login.html'
+                }).catch(error => {
+                console.error('Erro ao inserir usuário na tabela "usuario":', error);
+            })
+
+
+        }
+
+    </script>
+
 </body>
 </html>

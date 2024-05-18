@@ -18,42 +18,42 @@
         <div class="container">
             <h2>Deixe-nos conhecê-lo melhor!</h2>
             
-            <h4>Gênero: <span>Masculino</span></h4>
+            <h4>Gênero</h4>
             <div class="container__genero">
                 <div class="content">
-                    <input class="content__input" name="opcao" type="radio" id="masculino"> 
-                    <label for="masculino" class="content__label genero">
+                    <input class="content__input" name="opcao" type="radio" id="m">
+                    <label for="m" class="content__label genero">
                         <img src="../../assets/image/user.svg">
                         <span>Masculino</span>
                     </label>
                 </div>
 
                 <div class="content">
-                    <input class="content__input" name="opcao" type="radio" id="feminino"> 
-                    <label for="feminino" class="content__label genero">
+                    <input class="content__input" name="opcao" type="radio" id="f">
+                    <label for="f" class="content__label genero">
                         <img src="../../assets/image/woman.svg">
                         <span>Feminino</span>
                     </label>
                 </div>
 
                 <div class="content">
-                    <input class="content__input" name="opcao" type="radio" id="binario"> 
-                    <label for="binario" class="content__label genero">
+                    <input class="content__input" name="opcao" type="radio" id="b">
+                    <label for="b" class="content__label genero">
                         <img src="../../assets/image/user.svg">
                         <span>Não Binário</span>
                     </label>
                 </div>
 
                 <div class="content">
-                    <input class="content__input" name="opcao" type="radio" id="outro"> 
-                    <label for="outro" class="content__label genero">
+                    <input class="content__input" name="opcao" type="radio" id="o">
+                    <label for="o" class="content__label genero">
                         <img src="../../assets/image/user.svg">
                         <span>Outro</span>
                     </label>
                 </div>
             </div>
 
-            <h4>Idade: <span>26</span></h4>
+            <h4>Idade</h4>
             <div class="slider">
                 <input class="sliderValue" type="number" id="ageInput" placeholder="26" min="1" max="110">                
                 <div class="field">
@@ -63,7 +63,7 @@
                 </div>
             </div>
    
-            <h4>Altura: <span>175cm</span></h4>
+            <h4>Altura</h4>
             <div class="slider">
                 <input class="sliderValue" type="number" id="heightInput" placeholder="175" min="140" max="230">                
                 <div class="field">
@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <h4>Peso: <span>82kg</span></h4>
+            <h4>Peso</h4>
             <div class="slider">
                 <input class="sliderValue" type="number" id="weightInput" placeholder="82" min="30" max="280">                
                 <div class="field">
@@ -83,9 +83,62 @@
                 </div>
             </div>
 
-            <button><a class="link" href="../step3-jornada/step3-jornada.html">Continue</a></button>
+            <button><a class="link" id="continua">Continue</a></button>
         </div>
 
+
         <script src="./step2-jornada.js"></script>
+
+        <script type="module">
+            import { supabase, user } from '/supabase-utils.js'
+
+            console.log("user ext" +user)
+            console.table(user.data.user.id)
+
+            document.getElementById('continua').addEventListener('click', function (){
+                continuar()
+            });
+
+            function continuar() {
+
+               // Captura todos os radio buttons - genero
+                var radioButtons = document.querySelectorAll('.container__genero .content__input[type="radio"]');
+                var valorSelecionado = '';
+
+                // Itera sobre os radio buttons para verificar qual está selecionado
+                radioButtons.forEach(function (radioButton) {
+                    if (radioButton.checked) {
+                        // Obtém o valor do radio button selecionado
+                        valorSelecionado = radioButton.id;
+                        console.log("Radio button selecionado:", valorSelecionado)
+
+                    }
+                });
+
+                console.log("user abaixo")
+                console.log(user)
+                // console.log("data abaixo")
+                // console.log(data)
+
+
+
+                // Captura idade, altura e peso
+                let idade = document.getElementById('ageInput').value;
+                let altura = document.getElementById('heightInput').value;
+                let peso = document.getElementById('weightInput').value;
+
+                supabase
+                    .from('caracteristicas')
+                    .insert([{ usuario_id: user.data.user.id, genero: valorSelecionado, idade: idade, altura: altura, peso: peso  }])
+                    .then(response => {
+                    console.log('caracteristicas inserido com sucesso na tabela "caracteristicas":', response);
+                    window.location.href = '../step3-jornada/step3-jornada.html'
+                }).catch(error => {
+                    console.error('Erro ao inserir caracteristicas na tabela "caracteristicas":', error);
+                })
+
+            }
+
+        </script>
     </body>
 </html>

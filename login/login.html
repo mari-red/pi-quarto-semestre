@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
     <!--Styles-->
     <link rel="stylesheet" href="../assets/style/styles.css">
     
@@ -27,7 +26,7 @@
                         <input type="checkbox"  placeholder="Senha">
                         <span>Lembrar informações</span>
                     </div>
-                    <button type="button" onclick="login()">Logar</button>
+                    <button type="button" id="login-button">Logar</button>
                 <p>Primeira vez aqui? <a href="/cadastro/cadastro.html">Cadastre-se gratuitamente</a></p>
             </div>
         </section>
@@ -35,9 +34,45 @@
 
     <!--JS-->
     <script src="../index.js"></script>
-    <script src="login.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
-    <script src="../firebaseConnection.js"></script>
+<!--    <script src="login.js"></script>-->
+<!--    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>-->
+<!--    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>-->
+<!--    <script src="../firebaseConnection.js"></script>-->
+
+
+    <script type="module">
+        import { supabase, user } from '../supabase-utils.js'
+
+        document.getElementById('login-button').addEventListener('click', function(){
+            let email = document.getElementById('userEmail').value;
+            let password = document.getElementById('userPassword').value;
+                signInWithEmail(email, password)
+            });
+
+        // Function to sign in with email and password
+        export async function signInWithEmail(email, password) {
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email,
+                password,
+            })
+
+            console.log("login-e-mail: " + email + " senha: " + password)
+            console.log('User signed up:', user);
+
+            if (error) {
+                console.error('Error signing in:', error.message);
+            } else {
+                console.log('User signed in:', data);
+                // window.location.href = '../dashboard/dashboard.html';
+                window.location.href = '../jornada/step1-jornada/step1-jornada.html'
+
+            }
+
+        }
+
+    </script>
+
+
+
 </body>
 </html>

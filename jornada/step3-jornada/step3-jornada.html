@@ -44,7 +44,55 @@
                 </label>
             </div>
 
-            <button><a class="link" href="../../dashboard/dashboard.html">Finalizar</a></button>
+            <button><a class="link" id="finalizajornada">Finalizar</a></button>
         </div>
+
+        <script type="module">
+            import { supabase, user } from '/supabase-utils.js'
+
+            document.getElementById('finalizajornada').addEventListener('click', function (){
+                finalizarjornada()
+            });
+
+            function finalizarjornada() {
+
+                // Captura todos os radio buttons - genero
+                var radioButtons = document.querySelectorAll('.content__frequencia .content__frequencia--input[type="radio"]');
+                var frequenciaSelecionada = 0;
+
+                // Itera sobre os radio buttons para verificar qual está selecionado
+                radioButtons.forEach(function (radioButton) {
+                    if (radioButton.checked) {
+                        // Obtém o valor do radio button selecionado
+                        frequenciaSelecionada = radioButton.id;
+                        console.log("Radio button selecionado:", frequenciaSelecionada)
+
+                    }
+                });
+
+                console.log("user abaixo")
+                console.log(user.data.user.id)
+
+
+                supabase
+                    .from('caracteristicas')
+                    .update([{ frequencia: frequenciaSelecionada }])
+                    .eq('usuario_id', user.data.user.id)
+                        .then(response => {
+                        console.log('caracteristicas inserido com sucesso na tabela "caracteristicas":', response);
+                        window.location.href = '../../dashboard/dashboard.html'
+                    }).catch(error => {
+                    console.error('Erro ao inserir caracteristicas na tabela "caracteristicas":', error);
+                })
+
+            }
+
+        </script>
+
+
+
+
+
+
     </body>
 </html>

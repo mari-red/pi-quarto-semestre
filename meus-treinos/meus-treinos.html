@@ -8,9 +8,13 @@
     <!--Styles-->
     <link rel="stylesheet" href="../assets/style/styles.css">
     <link rel="stylesheet" href="meus-treinos.css">
+    <link rel="stylesheet" href="dashboard/stylesDashboard.css">
 
 </head>
 <body>
+<header class="header">
+    <a class="voltar" href="../../dashboard/dashboard.html">Voltar</a>
+</header>
 <main>
     <section class="container-treino">
         <div class="treino">
@@ -18,11 +22,11 @@
             <p>Olá! É hora de treinar!</p>
             <p>Selecione uma modalidade abaixo</p>
             <div class="botoesMenu">
-                <input type="radio" id="corrida" name="mod"> Corrida
-                <input type="radio" id="ciclismo" name="mod"> Ciclismo
-                <input type="radio" id="yoga" name="mod"> Yoga
-                <input type="radio" id="natacao" name="mod"> Natação
-                <input type="radio" id="surf" name="mod"> Surf
+                <input type="radio" id="1" name="mod"> Corrida
+                <input type="radio" id="2" name="mod"> Ciclismo
+                <input type="radio" id="3" name="mod"> Natação
+                <input type="radio" id="4" name="mod"> Yoga
+                <input type="radio" id="5" name="mod"> Surf
             </div>
 
             <div class="contador">
@@ -32,9 +36,9 @@
             </div>
 
             <div class="contador">
-                <button class="iniciar" type="button" onclick="iniciar()">Iniciar</button>
-                <button class="parar" type="button" onclick="finalizar()">Finalizar</button>
-                <button class="resetar" type="button" onclick="resetar()">Resetar</button>
+                <button class="iniciar" id="inicia" type="button" >Iniciar</button>
+                <button class="parar" id="fim" type="button" >Finalizar</button>
+                <button class="resetar" id="reseta" type="button" >Resetar</button>
             </div>
 
 
@@ -48,5 +52,137 @@
 <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
 <script src="../firebaseConnection.js"></script>
+
+<script type="module">
+    import {supabase, user} from '../supabase-utils.js'
+
+
+    document.getElementById('fim').addEventListener('click', function (){
+        finalizar()
+    });
+
+    document.getElementById('inicia').addEventListener('click', function (){
+        iniciar()
+    });
+
+    document.getElementById('reseta').addEventListener('click', function (){
+        resetar()
+    });
+
+
+
+
+    const miliseg = document.querySelector('.milissegundos')
+    const seg = document.querySelector('.segundos')
+    const min = document.querySelector('.minutos')
+
+    let miliNum = 0
+    let segNum = 0
+    let minNum = 0
+    let INTERVALO = 0
+
+    function milissegundos() {
+        miliNum++
+        if (miliNum < 10) {
+            miliseg.innerHTML = '0' + miliNum
+        } else {
+            miliseg.innerHTML = miliNum
+        }
+
+        if (miliNum == 99) {
+            miliNum = 0
+            segundos()
+        }
+    }
+
+    function segundos() {
+        segNum++
+        if (segNum < 10) {
+            seg.innerHTML = '0' + segNum
+        }else {
+            seg.innerHTML = segNum
+        }
+
+        if (segNum == 59){
+            segNum = 0
+            minutos()
+        }
+    }
+
+    function minutos() {
+        minNum++
+        if (minNum < 10) {
+            min.innerHTML = '0' + minNum
+        } else {
+            min.innerHTML = minNum
+        }
+    }
+
+    function iniciar() {
+        console.log("iniciou")
+        clearInterval(INTERVALO)
+        INTERVALO = setInterval(() => {
+            milissegundos()
+        }, 10)
+    }
+
+    function finalizar() {
+        console.log("finalizou")
+
+        // Captura todos os radio buttons
+        var radioButtons = document.querySelectorAll('.botoesMenu input[type="radio"]');
+        var valorSelecionado = '';
+
+        // Itera sobre os radio buttons para verificar qual está selecionado
+        radioButtons.forEach(function(radioButton) {
+            if (radioButton.checked) {
+                // Faça o que for necessário com o radio button selecionado
+                console.log("Radio button selecionado:", radioButton.id);
+                // Obtém o valor do radio button selecionado
+                valorSelecionado = radioButton.id;
+                console.log("Radio button selecionado:", valorSelecionado)
+
+            }
+        });
+
+        clearInterval(INTERVALO)
+        console.log("intervalo = " + INTERVALO)
+        let minFinal = min.innerHTML;
+        let segFinal = seg.innerHTML;
+        let milisFinal = miliseg.innerHTML;
+        console.log("min = " + minFinal)
+        console.log("seg = " + segFinal)
+        console.log("miliseg = " + milisFinal)
+
+        console.log("user abaixo")
+        console.log(user)
+
+
+        supabase
+            .from('exercicios_usuario')
+            .insert([{ usuario_id: user.data.user.id, exercicio_id: valorSelecionado, tempo: minFinal+':'+segFinal+':'+milisFinal }])
+            .then(response => {
+                console.log('treino inserido com sucesso na tabela "exercicios_usuario":', response);
+            }).catch(error => {
+            console.error('Erro ao inserir ID do exercício na tabela "exercicios_usuario":', error);
+        })
+    }
+
+    function resetar() {
+        clearInterval(INTERVALO)
+        miliNum = 0
+        segNum = 0
+        minNum = 0
+        miliseg.innerHTML = '00'
+        seg.innerHTML = '00'
+        min.innerHTML = '00'
+    }
+
+
+
+</script>
+
+
+
 </body>
 </html>
